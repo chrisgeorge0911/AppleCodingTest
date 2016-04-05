@@ -14,3 +14,10 @@ class TestInterpreter(TestCase):
         self.assertEqual(interpreter.getMatchesForString('Which restaurants do East Asian food'), {'east asian'})
         self.assertEqual(interpreter.getMatchesForString('Which restaurants do West Indian food'), {'west indian', 'indian'})
         self.assertEqual(interpreter.getMatchesForString('What is the weather like today'), {})
+
+    def test_getMatchesForString_emptyString(self):
+
+        interpreter = Interpreter()
+
+        self.assertEqual(interpreter.getMatchesForString(''), {})
+
