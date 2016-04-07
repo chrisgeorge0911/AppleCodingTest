@@ -1,7 +1,7 @@
 import string
 import unicodedata
 
-from concepts import Concepts
+from Modules.concepts import Concepts
 
 
 class Interpreter:
