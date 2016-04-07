@@ -15,7 +15,13 @@ class Concepts:
             self.conceptData[word] = True
 
     def first_letter_match(self, string_to_find):
+        if not string_to_find:
+            return False
+
         return self.conceptData.path.get(string_to_find[0]) is not None
 
     def match(self, string_to_find):
+        if not string_to_find:
+            return False
+
         return self.conceptData.get(string_to_find.lower(), False)
