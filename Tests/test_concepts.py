@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 
 from Modules.concepts import Concepts
@@ -43,3 +44,5 @@ class TestConcepts(TestCase):
         self.assertEqual(concepts.match('wibble'), False)
 
 
+if __name__ == "__main__":
+    unittest.main()

@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 
 from Modules.interpreter import Interpreter
@@ -54,3 +55,5 @@ class TestInterpreter(TestCase):
 
         self.assertEqual(interpreter.get_matches_for_string(''), [])
 
+if __name__ == "__main__":
+    unittest.main()
