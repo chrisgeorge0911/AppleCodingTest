@@ -2,7 +2,7 @@
 
 ##Instructions
 
-Created using python 3.5.1
+Created using python 3.5.1, using PyCharm IDE
 Requires standard libraries only.
 
 To run:
@@ -42,6 +42,9 @@ There are tests against each of the modules.
 - test_concepts contains a few tests that make sure the key functionality of first letter matching and word matching are checked.
 - test_trie are tests provided by the author of the trie module.
 
+The tests were mostly developed first and continuously run through the Pycharm test runner on every save.
+
+The tests can also be run from the command line.
 
 
 ##Larger data set
@@ -58,6 +61,8 @@ Using native Python trie code is not efficient and when using the larger word da
 Options available are using a C++ trie module which can be 30-100x faster according to the documentation.
 
 With some further thought, the algorithm for traversing the sentence could be made more efficient.
+
+Performance testing, and profiling would be performed to identify potential bottlenecks and areas of improvement in the system.
 
 ##Issues
 
