@@ -14,6 +14,6 @@ def main(**kwargs):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Enter a sentence and get a list of concepts')
-    parser.add_argument('\"sentence\"', nargs='+', type=str, help='Enter a sentence')
+    parser.add_argument('sentence', nargs='+', type=str, help='Enter a sentence')
     args = parser.parse_args()
     main(**vars(args))

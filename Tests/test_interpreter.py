@@ -23,7 +23,7 @@ class TestInterpreter(TestCase):
     def test_getMatchesForString_whitespace(self):
         interpreter = Interpreter()
 
-        self.assertEqual(interpreter.get_matches_for_string('I would like some   thai food'), ['thai'])
+        self.assertEqual(interpreter.get_matches_for_string('I would   like some   thai   food'), ['thai'])
 
     def test_getMatchesForString_duplicates(self):
         interpreter = Interpreter()

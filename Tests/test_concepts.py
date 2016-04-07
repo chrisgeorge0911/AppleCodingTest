@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from concepts import Concepts
+from Modules.concepts import Concepts
 
 
 class TestConcepts(TestCase):

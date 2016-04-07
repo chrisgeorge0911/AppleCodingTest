@@ -1,3 +1,4 @@
+# Created by B.F. Dimmick - https://github.com/bdimmick/python-trie
 
 class Trie:
 

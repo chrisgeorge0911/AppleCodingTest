@@ -1,7 +1,10 @@
 #!/usr/bin/python -B
 
+# Created by B.F. Dimmick - https://github.com/bdimmick/python-trie
+
 import unittest
-from trie import Trie
+
+from Modules.trie import Trie
 
 
 class TestTrie(unittest.TestCase):
