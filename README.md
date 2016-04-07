@@ -7,3 +7,6 @@ Using Siri in IOS 9.3.1 as the primary oracle when determining certain behaviour
 - accented characters are treated the same as their non-accented equivalent
 
 
+##Issues
+
+- Apostrophes (ie Italian's) will currently be removed, leaving Italians, but this will not match unless Italians is present in the dataset.
