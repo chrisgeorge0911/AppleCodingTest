@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from interpreter import Interpreter
+from Modules.interpreter import Interpreter
 
 
 class TestInterpreter(TestCase):
