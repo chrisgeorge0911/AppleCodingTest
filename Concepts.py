@@ -7,9 +7,18 @@ class Concepts:
 
         self.read_concepts()
 
+    def read_word_file(self):
+        text_file = open("word.dat", "r")
+        lines = text_file.read().split('\n')
+
+        text_file.close()
+        return lines
+
     def read_concepts(self):
         word_list = ('indian', 'thai', 'sushi', 'caribbean', 'italian', 'west indian', 'pub', 'east asian',
-         'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european')
+          'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european')
+
+        # word_list = self.read_word_file()
 
         for word in word_list:
             self.conceptData[word] = True
