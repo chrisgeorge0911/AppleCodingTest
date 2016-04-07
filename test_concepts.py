@@ -5,18 +5,41 @@ from concepts import Concepts
 
 class TestConcepts(TestCase):
 
-    def test_get_matches_all_dataset_values(self):
+    test_dataset = {
+        'indian' : 'indian',
+        'thai': 'thai',
+        'sushi':'sushi',
+        'caribbean': 'caribbean',
+        'italian': 'italian',
+        'west indian': 'west indian',
+        'pub': 'pub',
+        'east asian': 'east asian',
+        'bbq': 'bbq',
+        'chinese': 'chinese',
+        'portuguese': 'portuguese',
+        'spanish': 'spanish',
+        'french': 'french',
+        'east european': 'east european'
+    }
+
+    def test_read_concepts(self):
         concepts = Concepts()
 
-        # check that the match works for all discrete values in the concepts data set
-        for concept in concepts.conceptData:
-            self.assertEqual(concepts.get_matches(concept), concept.lower())
+        self.assertGreater(concepts.conceptData.nodeCount(), 1)
 
-    def test_get_matches_all_dataset_values_uppercase(self):
+    def test_first_letter_match(self):
         concepts = Concepts()
 
-        # check that the match is case insensitive
-        for concept in concepts.conceptData:
-            self.assertEqual(concepts.get_matches(concept.upper()), concept.lower())
+        self.assertEqual(concepts.first_letter_match('indian'), True)
+        self.assertEqual(concepts.first_letter_match('queen'), False)
+        self.assertEqual(concepts.first_letter_match('french'), True)
+
+    def test_match(self):
+        concepts = Concepts()
+
+        self.assertEqual(concepts.match('indian'), True)
+        self.assertEqual(concepts.match('west indian'), True)
+
+        self.assertEqual(concepts.match('wibble'), False)
 
 

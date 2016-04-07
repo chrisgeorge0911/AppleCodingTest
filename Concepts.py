@@ -1,14 +1,21 @@
+from trie import Trie
+
+
 class Concepts:
     def __init__(self):
-        self.conceptData = self.read_concepts()
+        self.conceptData = Trie()
+
+        self.read_concepts()
 
     def read_concepts(self):
-        return {'indian', 'thai', 'sushi', 'caribbean', 'italian', 'west indian', 'pub', 'east asian',
-         'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european'}
+        word_list = ('indian', 'thai', 'sushi', 'caribbean', 'italian', 'west indian', 'pub', 'east asian',
+         'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european')
 
+        for word in word_list:
+            self.conceptData[word] = True
 
-    def get_matches(self, word):
-        lowercase_word = word.lower()
-        if lowercase_word in self.conceptData:
-            return lowercase_word
+    def first_letter_match(self, string_to_find):
+        return self.conceptData.path.get(string_to_find[0]) is not None
 
+    def match(self, string_to_find):
+        return self.conceptData.get(string_to_find.lower(), False)
