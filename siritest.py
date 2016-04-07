@@ -1,6 +1,6 @@
 import argparse
 
-from interpreter import Interpreter
+from Modules.interpreter import Interpreter
 
 
 def main(**kwargs):
