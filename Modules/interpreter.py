@@ -7,6 +7,11 @@ from Modules.concepts import Concepts
 class Interpreter:
 
     def get_matches_for_string(self, sentence):
+        """
+        Search for concepts in the supplied sentence
+        :param sentence:
+        :return: List of concepts that exist in the sentence
+        """
 
         # convert accented and other special characters to their standard character equivalent
         sentence = unicodedata.normalize('NFKD', sentence).encode('ASCII', 'ignore').decode('UTF-8')
