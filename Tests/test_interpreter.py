@@ -51,6 +51,7 @@ class TestInterpreter(TestCase):
     def test_getMatchesForString_emptyString(self):
 
         self.assertEqual(self.interpreter.get_matches_for_string(''), [])
+        self.assertEqual(self.interpreter.get_matches_for_string(None), [])
 
 
 if __name__ == "__main__":

@@ -16,23 +16,27 @@ class Interpreter:
         :param sentence:
         :return: List of concepts that exist in the sentence
         """
+        matched_list = []
 
-        sanitised_sentence = self.sanitise_string(sentence)
+        if sentence is not None:
+            sanitised_sentence = self.sanitise_string(sentence)
 
-        # make list of words, lowercasing the text during this process
-        words = sanitised_sentence.lower().split(' ')
+            # make list of words, lowercasing the text during this process
+            words = sanitised_sentence.lower().split(' ')
 
-        matched_list = self.find_concepts_in_string(words)
+            matched_list = self.find_concepts_in_string(words)
 
         return matched_list
 
     def sanitise_string(self, sentence):
-        # convert accented and other special characters to their standard character equivalent
-        sentence = unicodedata.normalize('NFKD', sentence).encode('ASCII', 'ignore').decode('UTF-8')
 
-        # remove punctuation marks
-        exclude = set(string.punctuation)
-        sentence = ''.join(ch for ch in sentence if ch not in exclude)
+        if sentence is not None:
+            # convert accented and other special characters to their standard character equivalent
+            sentence = unicodedata.normalize('NFKD', sentence).encode('ASCII', 'ignore').decode('UTF-8')
+
+            # remove punctuation marks
+            exclude = set(string.punctuation)
+            sentence = ''.join(ch for ch in sentence if ch not in exclude)
 
         return sentence
 
