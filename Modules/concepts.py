@@ -23,7 +23,7 @@ class Concepts:
         Create conceptData trie from the default data set, or with the commented out word file.
         """
         word_list = ('indian', 'thai', 'sushi', 'caribbean', 'italian', 'west indian', 'pub', 'east asian',
-          'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european')
+          'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european', 'japanese sushi shop')
 
         # word_list = self.read_word_file()
 

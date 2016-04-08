@@ -56,9 +56,14 @@ There is a larger data set that can be used by uncommenting line 21 in concepts.
 
 ##Performance
 
-Using native Python trie code is not efficient and when using the larger word dataset, it does take 2-3 seconds to return a result.
+Using native Python trie code is not efficient and when using the larger word dataset. Options available are using a C++ trie module which can be 30-100x faster according to the documentation.
 
-Options available are using a C++ trie module which can be 30-100x faster according to the documentation.
+The implemented method for reading and storing the dataset is far from optimal, and accounts of the majority of the time spent during an operation. Options for this would be a caching mechanism and storing in a more suitable data store.
+
+For example:
+
+- reading and storing data set (100,000 words) - ~1.6secs
+- performing a search - ~0.0005secs
 
 With some further thought, the algorithm for traversing the sentence could be made more efficient.
 
