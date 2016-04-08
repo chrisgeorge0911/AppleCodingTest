@@ -6,9 +6,9 @@ from Modules.concepts import Concepts
 
 class Interpreter:
 
-    def __init__(self):
-        # read the concept data
-        self.concepts = Concepts()
+    def __init__(self, sample_set=True):
+        # read the concept data into memory
+        self.concepts = Concepts(sample_set)
 
     def get_matches_for_string(self, sentence):
         """
@@ -29,7 +29,11 @@ class Interpreter:
         return matched_list
 
     def sanitise_string(self, sentence):
-
+        """
+        Convert a string to remove any accented characters and punctuation
+        :param sentence: String to sanitise
+        :return: Version of the string without accents and punctuation.
+        """
         if sentence is not None:
             # convert accented and other special characters to their standard character equivalent
             sentence = unicodedata.normalize('NFKD', sentence).encode('ASCII', 'ignore').decode('UTF-8')

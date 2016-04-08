@@ -2,32 +2,39 @@ from Modules.trie import Trie
 
 
 class Concepts:
-    def __init__(self):
+    def __init__(self, sample_set=True):
         self.conceptData = Trie()
 
-        self.read_concepts()
+        if sample_set:
+            dataset = self.default_dataset()
+        else:
+            dataset = self.large_dataset()
 
-    def read_word_file(self):
+        self.read_concepts(dataset)
+
+    def large_dataset(self):
         """
         Read the supplied word data file and use the data in the search trie
         :return: list of words
         """
-        text_file = open("word.dat", "r")
+
+        text_file = open("big_word_list.dat", "r")
         words = text_file.read().split('\n')
 
         text_file.close()
         return words
 
-    def read_concepts(self):
+    def default_dataset(self):
+        word_list = ('indian', 'thai', 'sushi', 'caribbean', 'italian', 'west indian', 'pub', 'east asian',
+                     'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european', 'japanese sushi shop')
+        return word_list
+
+    def read_concepts(self, dataset):
         """
         Create conceptData trie from the default data set, or with the commented out word file.
         """
-        word_list = ('indian', 'thai', 'sushi', 'caribbean', 'italian', 'west indian', 'pub', 'east asian',
-          'bbq', 'chinese', 'portuguese', 'spanish', 'french', 'east european', 'japanese sushi shop')
 
-        # word_list = self.read_word_file()
-
-        for word in word_list:
+        for word in dataset:
             self.conceptData[word] = True
 
     def first_letter_match(self, string_to_find):

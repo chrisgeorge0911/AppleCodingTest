@@ -62,7 +62,7 @@ The implemented method for reading and storing the dataset is far from optimal, 
 
 For example:
 
-- reading and storing data set (100,000 words) - ~1.6secs
+- reading and storing data set (532,738 words) - ~11secs
 - performing a search - ~0.0005secs
 
 With some further thought, the algorithm for traversing the sentence could be made more efficient.

@@ -1,4 +1,6 @@
 # Created by B.F. Dimmick - https://github.com/bdimmick/python-trie
+import sys
+sys.setrecursionlimit(10000)
 
 class Trie:
 
