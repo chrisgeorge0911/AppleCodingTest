@@ -39,10 +39,12 @@ class TestInterpreter(TestCase):
     def test_getMatchesForString_special_characters(self):
 
         self.assertEqual(self.interpreter.get_matches_for_string('èast asian'), ['east asian'])
+        self.assertEqual(self.interpreter.get_matches_for_string('east âsiân'), ['east asian'])
 
     def test_getMatchesForString_punctuation(self):
 
         self.assertEqual(self.interpreter.get_matches_for_string('lots of italian, more chinese'), ['italian', 'chinese'])
+        self.assertEqual(self.interpreter.get_matches_for_string('Do I want italian or chinese?'), ['italian', 'chinese'])
 
     def test_getMatchesForString_max_words(self):
 
