@@ -2,7 +2,8 @@
 
 ##Instructions
 
-Created using python 3.5.1, using PyCharm IDE
+Created using python 3.5.1, using PyCharm IDE on Windows 10. It should run ok on Linux but this is untested.
+
 Requires standard libraries only.
 
 To run:
