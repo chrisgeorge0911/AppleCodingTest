@@ -7,7 +7,7 @@ Created using python 3.5.1, using PyCharm IDE on Windows 10. It should run ok on
 Requires standard libraries only.
 
 To run:
-siritest.py "I would like some thai food"
+`<python exe> siritest.py "I would like some thai food"`
 
 This will return the matches to the command line.
 
@@ -45,7 +45,9 @@ There are tests against each of the modules.
 
 The tests were mostly developed first and continuously run through the Pycharm test runner on every save.
 
-The tests can also be run from the command line.
+The tests can also be run from the command line. For example:
+
+`<python exe> Tests\test_interpreter.py`
 
 
 ##Larger data set
