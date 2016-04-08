@@ -9,7 +9,8 @@ def main(**kwargs):
 
     results = interpreter.get_matches_for_string(kwargs['sentence'][0])
 
-    print( ', '.join(results))
+    print('{} match{}'.format(len(results), 'es' if len(results) > 1 else ''))
+    print(', '.join(results))
 
 
 if __name__ == '__main__':
